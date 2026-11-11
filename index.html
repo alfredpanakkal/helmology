@@ -1,81 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Helmology Series – Helmology</title>
-  <meta name="description" content="Helmology is the home of the Helm series: maritime-first tools built by a serving seafarer. Live NAVAREA warnings and a free world port directory.">
-  <link rel="canonical" href="https://helmology.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Helmology">
-  <meta property="og:title" content="The Helmology Series">
-  <meta property="og:description" content="Maritime-first tools built by a serving seafarer.">
-  <meta property="og:url" content="https://helmology.com/">
-  <meta name="theme-color" content="#2b6e8c">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/" aria-label="Helmology home">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.4"/>
-          <path d="M12 2v3.6M12 18.4V22M2 12h3.6M18.4 12H22M4.9 4.9l2.6 2.6M16.5 16.5l2.6 2.6M19.1 4.9l-2.6 2.6M7.5 16.5l-2.6 2.6"/>
-        </svg>
-        <span>Helmology</span>
-      </a>
-      <nav aria-label="Main">
-        <a href="/" aria-current="page">Home</a>
-        <a href="/apps">Apps</a>
-        <a href="/about">About</a>
-        <a href="/disclaimer">Disclaimer</a>
-      </nav>
-      <div class="theme-picker" role="group" aria-label="Display theme">
-        <button data-theme-set="light" title="Light">Light</button>
-        <button data-theme-set="dark" title="Dark">Dark</button>
-        <button data-theme-set="night" title="Night watch">Night</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="shell">
-        <p class="eyebrow">Maritime-first software</p>
-        <h1>The Helmology Series</h1>
-        <p class="subline">Tools for seafarers, built by a serving seafarer. The Helm series starts at the chart table, not the boardroom.</p>
-      </div>
-    </section>
-
-    <section class="shell apps-section">
-      <h2>Live apps</h2>
-      <div class="app-grid">
-        <article class="app-card featured">
-          <p class="app-label">Featured</p>
-          <h3>Helm.Warning</h3>
-          <p>Live NAVAREA navigational warnings on an interactive world map. All 21 NAVAREA regions, ingested daily from official hydrographic sources.</p>
-          <a class="btn" href="https://helmwarning.vercel.app/" rel="noopener">Open Helm.Warning</a>
-        </article>
-        <article class="app-card">
-          <p class="app-label">Directory</p>
-          <h3>Helm.Ports</h3>
-          <p>A free world port directory built on the NGA Publication 150 World Port Index. Search, filter and explore ports with tide, weather and sun-moon data.</p>
-          <a class="btn" href="https://helmports.vercel.app/" rel="noopener">Open Helm.Ports</a>
-        </article>
-      </div>
-      <p class="more-note">Also in the series: Helm.Almanac, Helm.Productivity, Helm.Bond, Helm.Fasting and Helm.NRI.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell">
-      <p>Helmology — the Helm series, by Alfred Panakkal Jose.</p>
-      <p class="fine-print">Navigational information shown by these apps is for situational awareness only and is not a substitute for official notices. <a href="/disclaimer">Read the full disclaimer</a>.</p>
-    </div>
-  </footer>
-  <script src="/assets/js/theme.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAF7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1210" />
+    <title>The Helmology Series – Helmology</title>
+    <meta name="description" content="Helmology is the home of the Helm series: maritime-first tools built by a serving seafarer. Live NAVAREA warnings and a free world port directory." />
+    <link rel="canonical" href="https://helmology.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="The Helmology Series" />
+    <meta property="og:description" content="Maritime-first tools built by a serving seafarer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://helmology.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <script>
+      // Pre-hydration theme: apply the saved/system theme before first paint
+      // so the page never flashes light-then-dark on mobile. Mirrors the
+      // ThemeProvider logic in src/components/theme-provider.tsx.
+      try {
+        var t = localStorage.getItem("helmology-theme") || "system";
+        var dark =
+          t === "dark" ||
+          (t !== "light" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
+    <div id="root" data-page="home"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

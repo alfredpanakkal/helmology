@@ -1,94 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apps – Helmology</title>
-  <meta name="description" content="The Helm series apps: Helm.Warning (live NAVAREA navigational warnings) and Helm.Ports (free world port directory from NGA Publication 150).">
-  <link rel="canonical" href="https://helmology.com/apps">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Helmology">
-  <meta property="og:title" content="Helmology Apps">
-  <meta property="og:description" content="Live NAVAREA warnings and a free world port directory.">
-  <meta property="og:url" content="https://helmology.com/apps">
-  <meta name="theme-color" content="#2b6e8c">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/" aria-label="Helmology home">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.4"/>
-          <path d="M12 2v3.6M12 18.4V22M2 12h3.6M18.4 12H22M4.9 4.9l2.6 2.6M16.5 16.5l2.6 2.6M19.1 4.9l-2.6 2.6M7.5 16.5l-2.6 2.6"/>
-        </svg>
-        <span>Helmology</span>
-      </a>
-      <nav aria-label="Main">
-        <a href="/">Home</a>
-        <a href="/apps" aria-current="page">Apps</a>
-        <a href="/about">About</a>
-        <a href="/disclaimer">Disclaimer</a>
-      </nav>
-      <div class="theme-picker" role="group" aria-label="Display theme">
-        <button data-theme-set="light" title="Light">Light</button>
-        <button data-theme-set="dark" title="Dark">Dark</button>
-        <button data-theme-set="night" title="Night watch">Night</button>
-      </div>
-    </div>
-  </header>
-
-  <main class="shell page">
-    <h1>The apps</h1>
-    <p class="subline">Each Helm app solves a problem the author met on watch. Live links point to the deployed apps.</p>
-
-    <section class="app-detail">
-      <h2>Helm.Warning <span class="tag">Live</span></h2>
-      <h3>The problem</h3>
-      <p>NAVAREA navigational warnings are published by 21 separate regional coordinators, each on its own national website, in different formats and update cycles. Getting the full picture means visiting dozens of sources.</p>
-      <h3>What it does</h3>
-      <ul>
-        <li>Plots in-force NAVAREA warnings on an interactive world map, updated daily by automated ingestion pipelines.</li>
-        <li>Covers all 21 NAVAREA regions plus AUSCOAST coastal warnings, with a per-region source registry.</li>
-        <li>Preserves full warning lifecycle: active, cancelled, expired and superseded warnings keep their audit trail.</li>
-        <li>Never guesses ambiguous coordinates — they are flagged for human review instead of being plotted.</li>
-      </ul>
-      <h3>Stack</h3>
-      <p>Vanilla JS public portal, React admin console, Supabase (PostGIS), Python ingestion pipelines on GitHub Actions, deployed on Vercel.</p>
-      <p><a class="btn" href="https://helmwarning.vercel.app/" rel="noopener">Open Helm.Warning</a></p>
-    </section>
-
-    <section class="app-detail">
-      <h2>Helm.Ports <span class="tag">Live</span></h2>
-      <h3>The problem</h3>
-      <p>The NGA World Port Index is a dense publication that is hard to search, filter or connect to live context like tides and weather.</p>
-      <h3>What it does</h3>
-      <ul>
-        <li>Free port directory and interactive map built on NGA Publication 150 data.</li>
-        <li>Search and filter by name, country, size and facilities, with alternate port names matched.</li>
-        <li>Port detail sheets include weather, tides, and sun-moon data for passage planning.</li>
-        <li>Shows the full original NGA record for every port — nothing is hidden behind the UI.</li>
-      </ul>
-      <h3>Stack</h3>
-      <p>React 19, Vite, MapLibre GL, Express/Vercel serverless functions. Data from NGA Publication 150.</p>
-      <p><a class="btn" href="https://helmports.vercel.app/" rel="noopener">Open Helm.Ports</a></p>
-    </section>
-
-    <section class="app-detail">
-      <h2>In the series</h2>
-      <p>Helm.Almanac, Helm.Productivity, Helm.Bond, Helm.Fasting and Helm.NRI are part of the Helm series. They will be linked here as each goes live.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell">
-      <p>Helmology — the Helm series, by Alfred Panakkal Jose.</p>
-      <p class="fine-print">Navigational information shown by these apps is for situational awareness only and is not a substitute for official notices. <a href="/disclaimer">Read the full disclaimer</a>.</p>
-    </div>
-  </footer>
-  <script src="/assets/js/theme.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAF7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1210" />
+    <title>Apps – Helmology</title>
+    <meta name="description" content="The Helm series apps: Helm.Warning (live NAVAREA navigational warnings) and Helm.Ports (free world port directory from NGA Publication 150)." />
+    <link rel="canonical" href="https://helmology.com/apps" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="Helmology Apps" />
+    <meta property="og:description" content="Live NAVAREA warnings and a free world port directory." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://helmology.com/apps" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <script>
+      try {
+        var t = localStorage.getItem("helmology-theme") || "system";
+        var dark =
+          t === "dark" ||
+          (t !== "light" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
+    <div id="root" data-page="apps"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

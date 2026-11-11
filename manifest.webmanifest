@@ -4,8 +4,8 @@
   "description": "Maritime-first tools built by a serving seafarer.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2b6e8c",
+  "background_color": "#FAFAF7",
+  "theme_color": "#2F6B4F",
   "icons": [
     { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
