@@ -1,30 +1,38 @@
 # Helmology
 
-Static hub site for the Helm series — maritime-first tools by Alfred Panakkal Jose.
+Static hub site for the Helm series — maritime-first tools by Alfred Panakkal Jose. UI cloned from Helm.Ports (moss palette, header, theme system, cards).
 
 ## Pages
 
-- `/` — hero + live app grid (Helm.Warning featured, Helm.Ports)
+- `/` — hero + app grid (Helm.Warning featured, Helm.Ports)
 - `/apps` — per-app sections: problem, features, stack, live link
 - `/about` — developer bio, portfolio + LinkedIn
 - `/disclaimer` — maritime safety disclaimer (noindex; linked from footer)
 
-## Structure
+## Stack
 
-Pure static HTML/CSS/JS. No build step, no framework, no server.
+React 19 + Vite 8 + Tailwind CSS v4 (moss palette from Helm.Ports, `src/index.css`). Multi-page build: four HTML entries (`index.html`, `apps.html`, `about.html`, `disclaimer.html`), no client-side router, so every URL is a real file and no SPA fallback is needed.
 
-- `assets/css/tokens.css` — Helm design tokens (light / dark / night watch themes), copied from Helm.Warning
-- `assets/css/site.css` — page styles, built only on tokens
-- `assets/js/theme.js` — 3-theme picker, localStorage, system-preference default
+- `src/App.tsx` — shell: header (nav + info + theme toggle), footer, page switch
+- `src/pages/` — Home, Apps, About, Disclaimer
+- `src/components/theme-provider.tsx` — light/dark/system, storage key `helmology-theme`
+- `src/components/InfoSheet.tsx` — about/theme slide-over (same pattern as Helm.Ports)
+- `src/components/ui/` — button + sheet (copied from Helm.Ports)
 - SEO pack: `sitemap.xml`, `robots.txt`, `manifest.webmanifest`, `favicon.svg`, canonical + OG tags per page
 
-## Deploy (Cloudflare Pages)
+## Development
 
-1. Create a Pages project connected to this repo, production branch `main`.
-2. Build command: none (leave empty). Output directory: `/` (repo root).
-3. Add custom domain `helmology.com` — DNS is already on Cloudflare, so the records are created automatically.
-4. Verify: HTTPS active, single H1 per page, Lighthouse, mobile check, then submit to Google Search Console.
+```sh
+npm install
+npm run dev     # vite dev server
+npm run lint    # tsc --noEmit
+npm run build   # vite build -> dist/
+```
+
+## Deploy (Cloudflare)
+
+Build command: `npm run build`. Output directory: `dist`. Custom domain `helmology.com` (DNS already on Cloudflare). No placeholder GSC token — add the real one via Search Console later.
 
 ## Conventions
 
-Same as the rest of the Helm repos: branch, PR, maintainer merges. One H1 per page; weights max 500; accent `#2b6e8c` only; touch targets 44px minimum.
+Same as the rest of the Helm repos: branch, PR, maintainer merges. One H1 per page; moss palette only (mint accent #2F6B4F); touch targets 44px minimum.
