@@ -38,7 +38,7 @@ export function Home() {
               </p>
               <Button asChild className="mt-4 cursor-pointer">
                 <a
-                  href="https://helmwarning.vercel.app/"
+                  href="https://navarea.helmology.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -63,7 +63,7 @@ export function Home() {
               </p>
               <Button asChild className="mt-4 cursor-pointer">
                 <a
-                  href="https://helmports.vercel.app/"
+                  href="https://port.helmology.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
