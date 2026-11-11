@@ -94,7 +94,7 @@ export function Apps() {
             "Never guesses ambiguous coordinates — they are flagged for human review instead of being plotted.",
           ]}
           stack="Vanilla JS public portal, React admin console, Supabase (PostGIS), Python ingestion pipelines on GitHub Actions, deployed on Vercel."
-          href="https://helmwarning.vercel.app/"
+          href="https://navarea.helmology.com/"
         />
         <AppDetail
           name="Helm.Ports"
@@ -107,7 +107,7 @@ export function Apps() {
             "Shows the full original NGA record for every port — nothing is hidden behind the UI.",
           ]}
           stack="React 19, Vite, MapLibre GL, Express/Vercel serverless functions. Data from NGA Publication 150."
-          href="https://helmports.vercel.app/"
+          href="https://port.helmology.com/"
         />
       </div>
 
