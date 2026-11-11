@@ -107,7 +107,7 @@ export function Apps() {
             "Shows the full original NGA record for every port — nothing is hidden behind the UI.",
           ]}
           stack="React 19, Vite, MapLibre GL, Express/Vercel serverless functions. Data from NGA Publication 150."
-          href="https://port.helmology.com/"
+          href="https://ports.helmology.com/"
         />
       </div>
 

@@ -63,7 +63,7 @@ export function Home() {
               </p>
               <Button asChild className="mt-4 cursor-pointer">
                 <a
-                  href="https://port.helmology.com/"
+                  href="https://ports.helmology.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
