@@ -1,0 +1,12 @@
+{
+  "name": "Helmology — The Helm Series",
+  "short_name": "Helmology",
+  "description": "Maritime-first tools built by a serving seafarer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2b6e8c",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
